@@ -11,10 +11,10 @@
     font-style: normal;
     text-decoration: none;
 }
-
 section,
 header,
-footer {
+footer,
+.container {
     padding: 0 15px;
 }
 
@@ -22,7 +22,8 @@ footer {
 
     section,
     header,
-    footer {
+    footer,
+    .container{
         padding: 0 calc(50vw - 270px);
     }
 }
@@ -31,7 +32,8 @@ footer {
 
     section,
     header,
-    footer {
+    footer,
+    .container{
         padding: 0 calc(50vw - 360px);
     }
 }
@@ -40,7 +42,8 @@ footer {
 
     section,
     header,
-    footer {
+    footer,
+    .container{
         padding: 0 calc(50vw - 480px);
     }
 }
@@ -49,7 +52,8 @@ footer {
 
     section,
     header,
-    footer {
+    footer,
+    .container{
         padding: 0 calc(50vw - 590px);
     }
 }
@@ -58,7 +62,8 @@ footer {
 
     section,
     header,
-    footer {
+    footer,
+    .container{
         padding: 0 calc(50vw - 690px);
     }
 }

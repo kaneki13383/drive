@@ -7,7 +7,7 @@
                 <p>Kia Ceed</p>
                 <div>
                     <p class="tag">2023</p>
-                    <p class="tag">mech</p>
+                    <p class="tag">M/T</p>
                 </div>
                 <img src="../../../../public/img/pngegg 1.png" alt="">
                 <p><span>₽</span>10k/сутки</p>
@@ -39,6 +39,7 @@ section {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        gap: 21px;
 
         .card {
             padding: 27px 24px 22px 39px;
