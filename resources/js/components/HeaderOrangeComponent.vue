@@ -42,11 +42,21 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 35px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    color: white;
+    background: rgba(201, 113, 11, 1);
 
+    ul li a {
+        color: white;
+    }
 
     ul li {
         font-size: 24px;
+    }
+
+    svg path {
+        fill: white;
     }
 
     ul:nth-child(2) {

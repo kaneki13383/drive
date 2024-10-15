@@ -2,11 +2,11 @@
     <section>
         <h1>Машины <br> премиум класса</h1>
         <h2>Астрахань</h2>
-        <a href="">В каталог
+        <router-link to="/catalog">В каталог
             <svg width="19" height="34" viewBox="0 0 19 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2 32L16 17L2 2" stroke="white" stroke-width="3" />
             </svg>
-        </a>
+        </router-link>
     </section>
 </template>
 
