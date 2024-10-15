@@ -5,21 +5,22 @@
             <form>
                 <div>
                     <label for="">Введите имя</label>
-                    <input type="text" placeholder="Имя">
+                    <input type="text" v-model="name" placeholder="Имя">
                 </div>
                 <div>
                     <label for="">Введите почту</label>
-                    <input type="email" placeholder="Почта">
+                    <input type="email" v-model="email" placeholder="Почта">
                 </div>
                 <div>
                     <label for="">Придумайте пароль</label>
-                    <input type="password">
+                    <input type="password" v-model="password">
                 </div>
                 <div>
                     <label for="">Повторите пароль</label>
-                    <input type="password">
+                    <input type="password" v-model="password_repeat">
                 </div>
-                <button>Регистрация</button>
+                <button @click.prevent="Register()">Регистрация</button>
+                <p v-if="error != ''">{{ error }}</p>
             </form>
             <p>Уже есть аккаунт? <router-link to="/login">Войдите</router-link></p>
         </div>
@@ -30,7 +31,30 @@
 export default {
     data() {
         return {
-
+            name: '',
+            email: '',
+            password: '',
+            password_repeat: '',
+            error: ''
+        }
+    },
+    methods: {
+        Register() {
+            if (this.password == this.password_repeat) {
+                axios.post('/api/register', {
+                    name: this.name,
+                    email: this.email,
+                    password: this.password
+                })
+                    .then(res => {
+                        localStorage.setItem("token", res.data["content"]);
+                        localStorage.setItem("id", res.data["id"]);
+                        this.$router.push("/profile");
+                    })
+            }
+            else {
+                this.error = 'Пароли не совпадают'
+            }
         }
     },
 }
@@ -89,11 +113,11 @@ export default {
         }
     }
 
-    p{
+    p {
         text-align: center;
         padding-bottom: 30px;
 
-        a{
+        a {
             color: rgba(201, 113, 11, 1);
         }
     }

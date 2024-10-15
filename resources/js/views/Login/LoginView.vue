@@ -5,13 +5,13 @@
             <form>
                 <div>
                     <label for="">Введите почту</label>
-                    <input type="email" placeholder="Почта">
+                    <input type="email" v-model="email" placeholder="Почта">
                 </div>
                 <div>
                     <label for="">Введите пароль</label>
-                    <input type="password">
+                    <input type="password" v-model="password">
                 </div>
-                <button>Войти</button>
+                <button @click.prevent="Login()">Войти</button>
             </form>
             <p>Нет аккаунта? <router-link to="/register">Зарегистрируйтесь</router-link></p>
         </div>
@@ -22,7 +22,21 @@
 export default {
     data() {
         return {
-
+            email: '',
+            password: ''
+        }
+    },
+    methods: {
+        Login() {
+            axios.post('/api/login', {
+                email: this.email,
+                password: this.password
+            })
+                .then(res => {                    
+                    localStorage.setItem("token", res.data["content"]);
+                    localStorage.setItem("id", res.data["id"]);
+                    this.$router.push("/profile");
+                })
         }
     },
 }

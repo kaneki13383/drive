@@ -1,10 +1,9 @@
 <template>
     <section>
-        <p>Sport</p>
-        <p>Comfort</p>
-        <p>Sport</p>
-        <p>Luxury</p>
-        <p>Sport</p>
+        <p>Комфорт</p>
+        <p>Спорт</p>
+        <p>Эконом</p>
+        <p>Кроссовер</p>
     </section>
 </template>
 

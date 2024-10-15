@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CarController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +20,17 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Авторизация роуты
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
+// Вывод всех машин
+Route::get('/all_cars', [CarController::class, 'all_cars']);
+Route::get('/get_car/{id}', [CarController::class, 'get_car']);
+Route::get('/random_car', [CarController::class, 'random_car']);
+
+// Создание брони
+Route::post('/create/order', [OrderController::class, 'create']);
+Route::post('/get/order', [OrderController::class, 'my_orders']);
+Route::post('/delete/order/{id}', [OrderController::class, 'cancel_order']);
