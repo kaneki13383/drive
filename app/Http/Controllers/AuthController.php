@@ -29,6 +29,7 @@ class AuthController extends Controller
             'id' => Auth::user()->id
         ], 200);
     }
+
     public function login(Request $request)
     {
         if (!Auth::attempt($request->all())) {
@@ -42,6 +43,14 @@ class AuthController extends Controller
             'message' => 'Вы успешно вошли',
             'content' => $token,
             'id' => Auth::user()->id
+        ], 200);
+    }
+    
+    public function logout()
+    {
+        // auth('sanctum')->user()->delete();
+        return response()->json([
+            'message' => 'Вы вышли'
         ], 200);
     }
 }

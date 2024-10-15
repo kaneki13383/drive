@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use App\Models\Car;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -19,7 +20,9 @@ class OrderResource extends JsonResource
             'id' => $this->id,
             'id_car' => Car::where('id', $this->id_car)->get(),
             'status' => $this->status,
-            'id_user' => $this->id_user
+            'id_user' => User::where('id', $this->id_user)->get(),
+            'start' => $this->start,
+            'end' => $this->end,
         ];
     }
 }

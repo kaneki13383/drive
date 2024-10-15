@@ -45,13 +45,14 @@ section {
 
         .card {
             a {
-
                 padding: 22px 28px 22px 22px;
                 box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
                 border-radius: 20px;
                 display: flex;
                 flex-direction: column;
+                justify-content: space-between;
                 width: 421px;
+                height: 380px;
 
                 p:nth-child(1) {
                     font-size: 24px;
@@ -74,9 +75,8 @@ section {
                 }
 
                 p:nth-child(4) {
-                    position: relative;
-                    right: 0;
                     font-size: 20px;
+                    margin-left: 60%;
 
                     span {
                         color: rgba(201, 113, 11, 1);

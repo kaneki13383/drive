@@ -114,8 +114,8 @@ export default {
                 id_car: this.id_car,
                 id_user: this.id_user
             })
-                .then(res => {
-                    console.log(res);
+                .then(res => {                    
+                    this.$router.push("/profile");
                 })
         }
     },

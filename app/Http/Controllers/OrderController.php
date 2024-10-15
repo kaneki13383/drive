@@ -31,4 +31,19 @@ class OrderController extends Controller
     public function cancel_order($id){
         Order::where('id',$id)->delete();
     }
+
+    public function all_orders(){
+        return OrderResource::collection(Order::where('status', 'Ожидание')->get());
+    }
+
+    public function accept($id){
+        Order::where('id', $id)->update([
+            'status' => 'Одобрено'
+        ]);
+    }
+    public function cancel($id){
+        Order::where('id', $id)->update([
+            'status' => 'Отказано'
+        ]);
+    }
 }

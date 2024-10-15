@@ -1,6 +1,9 @@
 <template>
     <section>
-        <h1>Ваши заказы</h1>
+        <div class="head">
+            <h1>Ваши заказы</h1>
+            <p @click="Logout()">Выйти</p>
+        </div>
         <div class="all">
             <div class="card" v-for="row in orders" :key="row">
                 <p>{{ row.id_car[0].name }}</p>
@@ -43,7 +46,17 @@ export default {
                     console.log(res);
                     this.GetMyOrders()
                 })
-        }
+        },
+        
+        Logout(){
+                axios.get('/api/logout')
+                .then(res => {
+                    localStorage.removeItem("token");
+                    localStorage.removeItem("id");
+                    this.$router.push("/");
+
+                })
+            }
     },
 }
 </script>
@@ -62,11 +75,23 @@ export default {
 }
 
 section {
-    h1 {
-        color: rgba(201, 113, 11, 1);
-        font-size: 62px;
-        margin-top: 96px;
-        margin-bottom: 34px;
+    .head{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 24px;
+
+       h1 {
+            color: rgba(201, 113, 11, 1);
+            font-size: 62px;
+            margin-top: 96px;
+            margin-bottom: 45px;
+        } 
+
+        p{
+            cursor: pointer;
+        }
     }
 
     .all {

@@ -5,6 +5,7 @@ import RegisterView from "../views/Register/RegisterView.vue";
 import LoginView from "../views/Login/LoginView.vue";
 import ProfileView from "../views/Profile/ProfileView.vue";
 import OpenCarView from "../views/OpenCar/OpenCarView.vue";
+import AdminView from "../views/Admin/AdminView.vue";
 
 const router = new createRouter({
     base: "/",
@@ -15,7 +16,8 @@ const router = new createRouter({
         { path: "/register", component: RegisterView },
         { path: "/login", component: LoginView },
         { path: "/profile", component: ProfileView },
-        { path: "/car/:id", component: OpenCarView }
+        { path: "/car/:id", component: OpenCarView },
+        { path: "/admin", component: AdminView }
     ],
 });
 
