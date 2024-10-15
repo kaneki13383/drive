@@ -1,5 +1,5 @@
 <template>
-  <HeaderComponent></HeaderComponent>
+  <HeaderComponent v-if="this.$route.path != '/'"></HeaderComponent>
   <router-view></router-view>
   <FooterComponent></FooterComponent>
 </template>
