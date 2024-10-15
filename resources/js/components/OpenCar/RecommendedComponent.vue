@@ -3,7 +3,6 @@
         <h2>Смотрите также</h2>
         <div class="all">
             <div class="card" v-for="car in cars" :key="car">
-                <router-link  :to="'/car/' + car.id" @click="ReloadPage()">
                     <p>{{ car.name }}</p>
                     <div>
                         <p class="tag">{{ car.year }}</p>
@@ -11,7 +10,6 @@
                     </div>
                     <img :src="'/' + car.img" alt="">
                     <p><span>₽</span>{{ car.price }}/сутки</p>
-                </router-link>
             </div>
         </div>
     </section>
